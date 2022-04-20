@@ -72,21 +72,54 @@ console.log(find("burger", foodArr));
 // ----------------------
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
-function isFirstLetter(letter, string) {}
+function isFirstLetter(letter, string) {
+  let firstLetterMatch = false;
+  if (string[0] === letter) {
+    firstLetterMatch = true;
+  }
+  return firstLetterMatch;
+}
 console.log("isFirstLetter - should say true", isFirstLetter("a", "apple"));
 console.log("isFirstLetter - should say false", isFirstLetter("z", "apple"));
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll() {
+function sumAll(arr) {
   let sum = 0;
   // TODO: loop to add items
+  for (num of arr) {
+    sum += num;
+  }
   return sum;
 }
+console.log(sumAll(numSet));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
 
+let testArr = [-2, 26, -9, 100, -70];
+
+function posNum(arr) {
+  let posNumArr = [];
+  for (num of arr) {
+    if (num > 0) {
+      posNumArr.push(num);
+    }
+  }
+  return posNumArr;
+}
+
+console.log(posNum(testArr));
 // 11. Pick a problem from Edabit(https://edabit.com/) or
 //     CodeWars(https://www.codewars.com/). Then describe it
 //     here in a comment, write the function, and test it!
+//Convert Age to Days
+//
+//Create a function that takes the age in years and returns the age in days.
+//Use 365 days as the length of a year for this challenge.
+//Ignore leap years and days between last birthday and now.
+//Expect only positive integer inputs.
+
+function calcAge(age) {
+  return age > 0 ? age * 365 : 0;
+}
